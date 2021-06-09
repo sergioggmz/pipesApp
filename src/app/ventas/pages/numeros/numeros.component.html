@@ -7,9 +7,22 @@
 
 <div class="p-grid">
     <div class="p-col-4">
-        <p-card header="Ventas netas" subheader="Anuales">
+        <p-card header="Ventas Netas"
+                subheader="del presente año">
             <i class="pi pi-dollar"></i>
-            {{ventasNeta | number }}
+            {{ventasNetas+1000000 | number:'1.2-2'}} <!--Con esto se consiguen dos cifras decimales-->
+        </p-card>
+    </div>
+    <div class="p-col-4">
+        <p-card header="Ventas Brutas"
+                subheader="del presente año">
+            {{ventasNetas+2000000 | currency:'CAD':'symbol-narrow':'1.4-4'}} <!--Con esto se consiguen dos cifras decimales-->
+        </p-card>
+    </div>
+    <div class="p-col-4">
+        <p-card header="Ganancia porcentual"
+                subheader="del presente año">
+            {{porcentaje|percent:'2.2-2'}} <!--Con esto se consiguen dos cifras decimales-->
         </p-card>
     </div>
 </div>
